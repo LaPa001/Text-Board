@@ -1,0 +1,273 @@
+@media only screen and (min-width: 1000px){
+    body{
+        background-image: url("/photo/bg-screen.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    .wrapper{
+        width: 100%;
+        height: 100%;
+    }
+    .createnew{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+   
+    .btn-about{
+        background-image: url(/photo/btn-bg.png);
+        color: aliceblue;
+        width: 100%;
+        background-size: cover;
+        border-radius: 25px;
+        margin-left: 300px;
+        border: none;
+        font-size: 90px;
+        cursor: pointer;
+    }
+    .trendingTheme{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .text-trend{
+        color:rgb(255, 255, 255);
+        font-family: 'Jolly Lodger';
+        margin-right: 900px;
+        margin-top: 10px;
+        font-size: 50px;
+    }
+    .recent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .text-recent{
+        color:rgb(255, 255, 255);
+        font-family: 'Jolly Lodger';
+        margin-right: 900px;
+        font-size: 50px;
+    }
+    .no-re{
+
+        margin-top: 20px;
+        color:rgb(255, 255, 255);
+        font-family: 'Jolly Lodger';
+        font-size: 25px;
+
+    }
+    .Group{
+
+        position: relative;
+        top: 0px;
+        left: 50px;
+        gap: 100px;
+        display: flex;
+        
+    }
+    .btn{
+        background-image: url(/photo/button1.png);
+        background-size: cover;
+        border: none;
+        border-radius: 30px;
+        height: 200px;
+        width: 300px;
+        cursor: pointer;
+    }
+    .btn0{
+        background-image: url(/photo/button2.png);
+        background-size: cover;
+        border: none;
+        border-radius: 30px;
+        height: 200px;
+        width: 300px;
+        cursor: pointer;
+    }
+    button{
+
+        margin-top: 10px;
+
+
+    }
+    img{
+    
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+    }
+     .setting{
+
+        background-color: transparent;
+        border-color: transparent;
+        position: absolute;
+        top: 0px;
+        right: 50px;
+    }
+
+    .setting>img{
+
+        width: 80px;
+        height: 80px;
+    }
+    .light{
+ 
+        background-color: transparent;
+        border-color: transparent;
+        position: relative;
+        top: 90px;
+        right: 70px;
+    
+    }
+
+    
+
+    .light>img{
+
+        visibility: hidden;
+
+    }
+
+    
+    
+}
+@media only screen and (max-width: 991px) {
+    body{
+        background-image: url(/photo/bg-screen-mobile.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    .wrapper{
+        width: 100%;
+        height: 100%;
+    }
+    .createnew{
+        padding-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-about{
+        background-image: url(/photo/btn-bg.png);
+        color: aliceblue;
+        background-size: cover;
+        border-radius: 10px;
+        margin-left: 2px;
+        border: none;
+        font-size: large;
+        cursor: pointer;
+    }
+    .trendingTheme{
+        padding-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .text-trend{
+        color:rgb(255, 255, 255);
+        font-family:'Jolly Lodger';
+        font-size: 25px;
+        margin-top: -130px;
+        margin-right: 50%;
+    }
+    .recent{
+        padding-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .text-recent{
+        color:rgb(255, 255, 255);
+        font-family: 'Jolly Lodger';
+        font-size: 25px;
+        margin-top: 5%;
+        margin-right: 50%;
+    }
+    .no-re{
+
+        margin-top: 20px;
+        color:rgb(255, 255, 255);
+        font-family: 'Jolly Lodger';
+        font-size: 25px;
+
+    }
+    
+    .btn{
+        background-image: url(/photo/button1.png);
+        background-size: cover;
+        margin-top: 100px;
+        border: none;
+        border-radius: 30px;
+        height: 150px;
+        width: 200px;
+        cursor: pointer;
+    }
+    .btn0{
+    
+        visibility: hidden;
+    }
+    button{
+
+        margin-top: 10px;
+
+    }
+    img{
+    
+        width: 70px;
+        height: 70px;
+        padding: 1px;
+    }
+     .setting{
+
+        background-color: transparent;
+        border-color: transparent;
+        position: absolute;
+        top: 80px;
+        right: 10px;
+    }
+
+    .setting>img{
+
+        width: 60px;
+        height: 60px;
+    }
+
+     .light{
+ 
+        background-color: transparent;
+        border-color: transparent;
+        position: relative;
+        top: 90px;
+        right: 70px;
+    
+    }
+
+    
+
+    .light>img{
+
+        width: 80px;
+        height: 80px;
+
+    }
+
+    .theme{
+
+        color:aliceblue;
+        font-family: 'Jolly Lodger';
+        font-size: 25px;
+        margin-top: 100px;
+        margin-left: -45px;
+    }
+}
