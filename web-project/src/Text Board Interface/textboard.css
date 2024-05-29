@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 991px){
     body{
         background-image: url(/photo/bg-screen.png);
         background-repeat: no-repeat;
@@ -38,14 +38,13 @@
         width: 750px;
         height: 250px;
     }
-    .inputwraper{
+    .inputwrapper{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
     .text{
-
         color: aliceblue;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 40px;
@@ -59,54 +58,60 @@
         width: 300px;
         padding: 0 0 0 10px;
     }
-  .speed-size {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: green;
-}
+    .speed-size {
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 110%;
+    }
 
-.speed {
-    color: rgb(255, 255, 255);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
-}
+    .speed {
+        gap: 20px;
+        display: flex;
+        padding: 20px;
+        color: rgb(255, 255, 255);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 30px;
+    }
 
-.size {
-    color: rgb(255, 255, 255);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
-}
+    .size {
+        gap: 20px;
+        display: flex;
+        padding: 20px;
+        color: rgb(255, 255, 255);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 30px;
+    }
 
-.R-slider {
-    -webkit-appearance: none;
-    width: 60%;
-    height: 20px;
-    background: linear-gradient(to right, #E0035D, #FFFE4B);
-    outline: none;
-    border-radius: 12px;
-}
+    .R-slider {
+        -webkit-appearance: none;
+        width: 80%;
+        height: 20px;
+        background: linear-gradient(to right, #E0035D, #FFFE4B);
+        outline: none;
+        border-radius: 12px;
+    }
 
-.R-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20%;
-    height: 30px;
-    background: #E0035D;
-    border-radius: 60%;
-    cursor: pointer;
-    z-index: 1;
-}
+    .R-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20%;
+        height: 30px;
+        background: #E0035D;
+        border-radius: 60%;
+        cursor: pointer;
+        z-index: 1;
+    }
 
-.R-slider::-moz-range-thumb {
-    width: 30%;
-    height: 30px;
-    background: #E0035D;
-    border-radius: 60%;
-    cursor: pointer;
-    z-index: 1;
-}
+    .R-slider::-moz-range-thumb {
+        width: 30%;
+        height: 30px;
+        background: #E0035D;
+        border-radius: 60%;
+        cursor: pointer;
+        z-index: 1;
+    }
     
     
     .anime-board-bg-text{
@@ -231,11 +236,6 @@
         width: 0px;
         
     }
-    
-
-
-
-    
 }
 @media only screen and (max-width: 991px) {
     body{

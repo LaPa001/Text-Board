@@ -1,5 +1,5 @@
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 991px){
     body{
         background-image: url("/photo/bg-homescreen.png");
         background-repeat: no-repeat;
@@ -42,11 +42,7 @@
     }
 
     h2 span{
-
-
         animation: animate 2s linear infinite;
-
-
     }
     
 }
@@ -72,13 +68,10 @@
         display: flex;
         font-size: 200px;
         font-family: 'Jolly Lodger';
-        
     }
 
     h1 span{
-
         animation: animate 2.5s linear infinite;
-
     }
 
     h2{
@@ -86,9 +79,7 @@
         top: 300px;
         display: flex;
         font-size: 190px;
-         font-family: 'Jolly Lodger';
-
-
+        font-family: 'Jolly Lodger';
     }
 
     h2 span{
