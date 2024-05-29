@@ -18,19 +18,15 @@
         flex-direction: column;
     }
     .phara{
-        position: relative;
-        top: -80px;
-        left: 200px;
+    
         color: aliceblue;
-        margin: 10% 25% 25% 10%;
+        margin: 5% 25% -5% 25%;
         font-size: 50px;
         text-align: center;
         font-family: 'Jolly Lodger';
     }
     .contri{
-        position: absolute;
-        top: 350px;
-        left: 600px;
+    
         color: #FDBFF8;
         -webkit-text-stroke: 2px #FE259B ;
         font-size: 75px;
@@ -71,8 +67,8 @@
         background-color: transparent;
         border-color: transparent;
         position: absolute;
-        top: 30px;
-        right: 100px;
+        top: 5%;
+        right: 10%;
     }
 
     .setting>img{
@@ -86,16 +82,12 @@
         color:transparent;
         
     }
-    .G-button{
-
-        display: block;
-        
-    }
+   
     .G1-button{
 
         display: flex;
         gap: 300px;
-        margin-top: -400px;
+        /* margin-top: -400px; */
     }
     .G2-button{
          display: flex;
