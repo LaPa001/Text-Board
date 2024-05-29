@@ -15,8 +15,8 @@
 
         button{
 
-        position: relative;
-        left: 450px;
+        margin-left: 10%;
+        margin-right: 5%;
 
 
         }
@@ -29,8 +29,8 @@
 
         .Themes{
 
-            margin-top: 200px;
-            margin-left: 700px;
+            margin-top: 10%;
+            margin-left: 42%;
             font-size: 90px;
             font-family: 'Jolly Lodger';
             color: #FDBFF8;
@@ -41,8 +41,8 @@
                 background-color: transparent;
                 border-color: transparent;
                 position: absolute;
-                top: 20px;
-                left: 1300px;
+                top: 3%;
+                right: 1%;
             }
 
             .setting>img{
