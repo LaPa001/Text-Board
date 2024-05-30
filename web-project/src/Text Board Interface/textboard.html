@@ -1,62 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="textboard.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jolly Lodger">
-</head>
-<body>
+    <link rel="stylesheet" href="textboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Jolly Lodger"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="wrapper">
-            <a href="../Themes/themes.html">
-                <button class="light"><img src="/photo/light.png" ></button>
-            </a>
-            <div class="theme">Themes</div>
-            <button class="setting"><img src="/photo/settings.png"></button>
-            <div class="scrolltext">
-                <marquee behavior="" direction="" class="marquee">Hello World</marquee>
-            </div>
-            <img src="/photo/default-bg1.png" alt="default-bg1" class="default-bg1">
-            <div class="inputwrapper">
-                <div class="text">
-                    <label for="input-text">Input text</label>
-                    <input type="text" id="input-text" class="input-text">
-                </div>
-                <div class="speed-size">
-                    <div class="speed">
-                        <label for="speed">Speed</label>
-                        <input type="range" id="speed" min="0" max="100" class="R-slider">
-                    </div>
-                    <div class="size">
-                        <label for="size">Size</label>
-                        <input type="range" id="size" min="0" max="100" class="R-slider">
-                    </div>
-                </div>
-            </div>
-            <div class="anime-board-bg-text">
-                <div class="anime-board">
-                    <div class="anime-style">
-                        Animation Style:
-                        <select name="" id="" class="anime-select">
-                            <option value="">left</option>
-                            <option value="">right</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="bg-text">
-                    <button class="btn1"><div class="bg-g">Background</div></button>
-                    <button class="btn2"><div class="text-t">Text</div></button>
-                </div>
-            </div>
-            <div class="start">
-                <a href="../Starting/index.html">
-                    <button class="btn-start">Start</button>
-                </a>
-            </div>
-           
+      <div class="wrapper">
+        <a href="../Themes/themes.html">
+          <button class="light"><img src="/photo/light.png" /></button>
+        </a>
+        <div class="theme">Themes</div>
+        <a href="../About/about.html">
+          <button class="setting">
+            <img src="/photo/settings.png" />
+          </button>
+        </a>
+        <div class="scrolltext">
+          <marquee class="marquee">Hello World</marquee>
         </div>
+        <img
+          src="/photo/default-bg1.png"
+          alt="default-bg1"
+          class="default-bg1"
+        />
+        <div class="inputwrapper">
+          <div class="text">
+            <label for="input-text">Input text</label>
+            <input type="text" id="input-text" class="input-text" />
+          </div>
+          <div class="speed-size">
+            <div class="speed">
+              <label for="speed">Speed</label>
+              <input
+                type="range"
+                id="speed"
+                min="0"
+                max="100"
+                class="R-slider"
+              />
+            </div>
+            <div class="size">
+              <label for="size">Size</label>
+              <input
+                type="range"
+                id="size"
+                min="0"
+                max="100"
+                class="R-slider"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="anime-board-bg-text">
+          <div class="anime-board">
+            <div class="anime-style">
+              <label for="animation-style">Select an animation style</label>
+              <select id="animation-style" class="anime-select">
+                <option value="left">Left To Right</option>
+                <option value="right">Right To Left</option>
+              </select>
+            </div>
+          </div>
+          <div class="bg-text">
+            <button class="btn1"><div class="bg-g">Background</div></button>
+            <button class="btn2"><div class="text-t">Text</div></button>
+          </div>
+        </div>
+        <div class="start">
+          <a href="../Starting/index.html">
+            <button class="btn-start">Start</button>
+          </a>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
