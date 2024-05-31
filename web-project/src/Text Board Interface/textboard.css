@@ -20,7 +20,7 @@
     justify-content: center;
   }
 
-  .scrolltext {
+  #scrolltext {
     background-image: url(/photo/default-background.png);
     width: 35%;
     height: 200px;
@@ -245,7 +245,7 @@
     justify-content: center;
   }
 
-  .scrolltext {
+  #scrolltext {
     background-image: url(/photo/default-background.png);
     width: 60%;
     height: 90px;
