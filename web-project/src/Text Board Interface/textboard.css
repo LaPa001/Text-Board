@@ -24,13 +24,8 @@
     background-image: url(/photo/default-background.png);
     width: 35%;
     height: 200px;
-    color: aliceblue;
-    font-size: xx-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
     margin-left: 1%;
+    margin-top: 5%;
   }
   .default-bg1 {
     margin-top: -12%;
@@ -255,11 +250,6 @@
     width: 60%;
     height: 90px;
     margin-top: 10%;
-    color: aliceblue;
-    font-size: xx-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .default-bg1 {
     margin-top: -100px;
@@ -307,6 +297,7 @@
   }
   .R-slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 50%;
     height: 15px;
     background: linear-gradient(to right, #e0035d, #fffe4b);
