@@ -43,7 +43,6 @@ function rightToLeft(text) {
 
 textInput.addEventListener("input", (e) => {
   text = e.target.value;
-  leftToRight(text);
 });
 
 animeSelect.addEventListener("change", (e) => {
