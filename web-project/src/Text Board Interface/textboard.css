@@ -290,7 +290,7 @@
     font-size: x-large;
   }
   .size {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     color: rgb(255, 255, 255);
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: x-large;

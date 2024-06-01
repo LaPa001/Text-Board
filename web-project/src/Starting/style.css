@@ -10,18 +10,6 @@
     background-attachment: fixed;
     background-size: cover;
   }
-  .marq {
-    height: 100%;
-    width: 100%;
-    margin-top: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .marquee {
-    font-size: 600px;
-    color: aliceblue;
-  }
 }
 @media only screen and (max-width: 991px) {
   body {
@@ -34,16 +22,5 @@
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-  }
-  .marq {
-    height: 100%;
-    width: 100%;
-    margin-top: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .marquee {
-    font-size: 75px;
   }
 }
