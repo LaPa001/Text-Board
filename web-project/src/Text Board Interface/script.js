@@ -2,8 +2,10 @@
 let textInput = document.getElementById("input-text");
 let text = "";
 
+// animation style
 const animeSelect = document.getElementById("animation-style");
 
+// canvas
 const canvas = document.getElementById("scrolltext");
 
 const canvasDimension = canvas.getBoundingClientRect();
@@ -12,6 +14,11 @@ const c = canvas.getContext("2d");
 
 c.font = "60px Jolly Lodger";
 c.fillStyle = "#ffffff";
+
+// speed input
+const speedInput = document.getElementById("speed");
+// size input
+const sizeInput = document.getElementById("size");
 
 let xLeft = 0;
 function leftToRight(text) {
@@ -43,6 +50,14 @@ function rightToLeft(text) {
 
 textInput.addEventListener("input", (e) => {
   text = e.target.value;
+});
+
+speedInput.addEventListener("input", (e) => {
+  console.log(e.target.value);
+});
+
+sizeInput.addEventListener("input", (e) => {
+  console.log(e.target.value);
 });
 
 animeSelect.addEventListener("change", (e) => {
