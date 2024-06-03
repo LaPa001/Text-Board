@@ -321,6 +321,8 @@
     cursor: pointer;
   }
   .anime-board-bg-text {
+    display: flex;
+    flex-direction: column;
     margin-top: 5%;
     justify-content: center;
     align-items: center;
@@ -436,4 +438,5 @@
     margin-top: 170px;
     margin-left: -260px;
   }
+
 }
