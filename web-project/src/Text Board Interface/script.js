@@ -4,12 +4,16 @@ let text = "";
 
 // animation style
 const animeSelect = document.getElementById("animation-style");
+let selectedOption = "";
 
 // canvas
 const canvas = document.getElementById("scrolltext");
-const canvasDimension = canvas.getBoundingClientRect();
 const c = canvas.getContext("2d");
 c.fillStyle = "#ffffff";
+
+// full canvas
+const fullCanvas = document.getElementById("full-canvas");
+const fullC = fullCanvas.getContext("2d");
 
 // speed input
 const speedInput = document.getElementById("speed");
@@ -17,7 +21,7 @@ let speed;
 
 // size input
 const sizeInput = document.getElementById("size");
-let size;
+let size = "";
 
 textInput.addEventListener("input", (e) => {
   text = e.target.value;
@@ -32,10 +36,34 @@ sizeInput.addEventListener("input", (e) => {
   c.font = `${size}px Jolly Lodger`;
 });
 
+const inputForm = document.getElementById("input-form");
+
+inputForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("start");
+  fullCanvas.style.display = "block";
+  
+  fullCanvas.style.position = "fixed";
+  fullCanvas.style.top = "0";
+  fullCanvas.style.left = "0";
+  fullCanvas.style.zIndex = "9999";
+  fullCanvas.width = window.innerWidth;
+  fullCanvas.height = window.innerHeight;
+  
+  fullC.fillStyle = "#ffffff";
+  fullC.font = `${parseInt(size) * 2}px Jolly Lodger`;
+
+  fullCanvas.style.background = "url('/photo/default-background.png')";
+  fullCanvas.style.backgroundSize = "cover";
+  fullC.fillText(text, 0, 100);
+  console.log(text);
+  console.log(size);
+});
+
 let xLeft = 0;
 function leftToRight(text) {
   requestAnimationFrame(() => leftToRight(text));
-  c.clearRect(0, 0, innerWidth, innerHeight);
+  c.clearRect(0, 0, canvas.width, canvas.height);
 
   c.fillText(text, xLeft, 100);
 
@@ -46,7 +74,7 @@ function leftToRight(text) {
   }
 }
 
-let xRight = canvasDimension.width;
+let xRight = canvas.width;
 function rightToLeft(text) {
   requestAnimationFrame(() => rightToLeft(text));
   c.clearRect(0, 0, innerWidth, innerHeight);
@@ -60,9 +88,8 @@ function rightToLeft(text) {
   }
 }
 
-
 animeSelect.addEventListener("change", (e) => {
-  const selectedOption = e.target.value;
+  selectedOption = e.target.value;
 
   if (selectedOption === "left") {
     leftToRight(text);
@@ -70,4 +97,3 @@ animeSelect.addEventListener("change", (e) => {
     rightToLeft(text);
   }
 });
-

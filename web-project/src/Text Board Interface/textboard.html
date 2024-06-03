@@ -23,12 +23,13 @@
           </button>
         </a>
         <canvas id="scrolltext"> </canvas>
+        <canvas id="full-canvas"></canvas>
         <img
           src="/photo/default-bg1.png"
           alt="default-bg1"
           class="default-bg1"
         />
-        <form>
+        <form id="input-form">
           <div class="inputwrapper">
             <div class="text">
               <label for="input-text">Input text</label>
@@ -66,10 +67,10 @@
                   <option value="right">Right To Left</option>
                 </select>
               </div>
-            </div>
-            <div class="bg-text">
-              <button class="btn1"><div class="bg-g">Background</div></button>
-              <button class="btn2"><div class="text-t">Text</div></button>
+              <div class="bg-text">
+                <button class="btn1"><div class="bg-g">Background</div></button>
+                <button class="btn2"><div class="text-t">Text</div></button>
+              </div>
             </div>
             <div class="start">
               <button type="submit" class="btn-start">Start</button>
