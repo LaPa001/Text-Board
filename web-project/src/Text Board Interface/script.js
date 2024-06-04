@@ -36,28 +36,40 @@ sizeInput.addEventListener("input", (e) => {
   c.font = `${size}px Jolly Lodger`;
 });
 
+animeSelect.addEventListener("change", (e) => {
+  selectedOption = e.target.value;
+
+  if (selectedOption === "left") {
+    leftToRight(text);
+  } else if (selectedOption === "right") {
+    rightToLeft(text);
+  }
+});
+
 const inputForm = document.getElementById("input-form");
 
 inputForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("start");
   fullCanvas.style.display = "block";
-  
+
   fullCanvas.style.position = "fixed";
   fullCanvas.style.top = "0";
   fullCanvas.style.left = "0";
   fullCanvas.style.zIndex = "9999";
   fullCanvas.width = window.innerWidth;
   fullCanvas.height = window.innerHeight;
-  
+
   fullC.fillStyle = "#ffffff";
-  fullC.font = `${parseInt(size) * 2}px Jolly Lodger`;
+  fullC.font = `${parseInt(size) * 5}px Jolly Lodger`;
 
   fullCanvas.style.background = "url('/photo/default-background.png')";
   fullCanvas.style.backgroundSize = "cover";
-  fullC.fillText(text, 0, 100);
-  console.log(text);
-  console.log(size);
+
+  if (selectedOption === "left") {
+    leftToRightFull(text);
+  } else if (selectedOption === "right") {
+    rightToLeftFull(text);
+  }
 });
 
 let xLeft = 0;
@@ -77,7 +89,7 @@ function leftToRight(text) {
 let xRight = canvas.width;
 function rightToLeft(text) {
   requestAnimationFrame(() => rightToLeft(text));
-  c.clearRect(0, 0, innerWidth, innerHeight);
+  c.clearRect(0, 0, canvas.width, canvas.height);
 
   c.fillText(text, xRight, 100);
 
@@ -88,12 +100,30 @@ function rightToLeft(text) {
   }
 }
 
-animeSelect.addEventListener("change", (e) => {
-  selectedOption = e.target.value;
+let fullXLeft = 0;
+function leftToRightFull(text) {
+  requestAnimationFrame(() => leftToRightFull(text));
+  fullC.clearRect(0, 0, fullCanvas.width, fullCanvas.height);
 
-  if (selectedOption === "left") {
-    leftToRight(text);
-  } else if (selectedOption === "right") {
-    rightToLeft(text);
+  fullC.fillText(text, fullXLeft, 600);
+
+  fullXLeft += speed * 2;
+
+  if (fullXLeft > 1900) {
+    fullXLeft = -400;
   }
-});
+}
+
+let fullXRight = fullCanvas.width;
+function rightToLeftFull(text) {
+  requestAnimationFrame(() => rightToLeftFull(text));
+  fullC.clearRect(0, 0, fullCanvas.width, fullCanvas.height);
+
+  fullC.fillText(text, fullXRight, 600);
+
+  fullXRight -= speed * 2;
+
+  if (fullXRight < -600) {
+    fullXRight = 2000;
+  }
+}
