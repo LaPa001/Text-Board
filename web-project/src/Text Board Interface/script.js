@@ -65,10 +65,18 @@ inputForm.addEventListener("submit", (e) => {
   fullCanvas.style.background = "url('/photo/default-background.png')";
   fullCanvas.style.backgroundSize = "cover";
 
-  if (selectedOption === "left") {
-    leftToRightFull(text);
-  } else if (selectedOption === "right") {
-    rightToLeftFull(text);
+  if (window.innerWidth < 600) {
+    if (selectedOption === "left") {
+      leftToRightFullMobile(text);
+    } else if (selectedOption === "right") {
+      rightToLeftFullMobile(text);
+    }
+  } else {
+    if (selectedOption === "left") {
+      leftToRightFull(text);
+    } else if (selectedOption === "right") {
+      rightToLeftFull(text);
+    }
   }
 });
 
@@ -125,5 +133,41 @@ function rightToLeftFull(text) {
 
   if (fullXRight < -600) {
     fullXRight = 2000;
+  }
+}
+
+let fullYTop = 0;
+function leftToRightFullMobile(text) {
+  requestAnimationFrame(() => leftToRightFullMobile(text));
+  fullC.clearRect(0, 0, fullCanvas.width, fullCanvas.height);
+
+  fullC.save();
+  fullC.translate(300, fullYTop);
+  fullC.rotate(-Math.PI / 2);
+  fullC.fillText(text, -20, 0);
+  fullC.restore();
+
+  fullYTop += speed * 2;
+
+  if (fullYTop > fullCanvas.height + 300) {
+    fullYTop = -200;
+  }
+}
+
+let fullYBottom = fullCanvas.height;
+function rightToLeftFullMobile(text) {
+  requestAnimationFrame(() => rightToLeftFullMobile(text));
+  fullC.clearRect(0, 0, fullCanvas.width, fullCanvas.height);
+
+  fullC.save();
+  fullC.translate(300, fullYBottom);
+  fullC.rotate(-Math.PI / 2);
+  fullC.fillText(text, -20, 0);
+  fullC.restore();
+
+  fullYBottom -= speed * 2;
+
+  if (fullYBottom < -200) {
+    fullYBottom = fullCanvas.height + 300;
   }
 }
