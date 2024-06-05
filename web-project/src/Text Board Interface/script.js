@@ -9,7 +9,6 @@ let selectedOption = "";
 // canvas
 const canvas = document.getElementById("scrolltext");
 const c = canvas.getContext("2d");
-c.fillStyle = "#ffffff";
 
 // full canvas
 const fullCanvas = document.getElementById("full-canvas");
@@ -23,6 +22,37 @@ let speed;
 const sizeInput = document.getElementById("size");
 let size = "";
 
+// background input
+const bgButton = document.getElementById("btn-bg");
+const bgContent = document.getElementById("background-content");
+let backgroundInput = "";
+
+// font input
+const fontInput = document.getElementById("select-font");
+let font = "";
+
+// color input
+const colorInput = document.getElementById("color-input");
+let color = "";
+// stroke input
+const strokeInput = document.getElementById("stroke-color-input");
+let stroke = "";
+
+colorInput.addEventListener("change", (e) => {
+  color = e.target.value;
+  c.fillStyle = `${color}`;
+});
+
+strokeInput.addEventListener("change", (e) => {
+  stroke = e.target.value;
+  c.lineWidth = 5;
+  c.strokeStyle = stroke;
+});
+
+fontInput.addEventListener("change", (e) => {
+  font = e.target.value;
+});
+
 textInput.addEventListener("input", (e) => {
   text = e.target.value;
 });
@@ -33,7 +63,35 @@ speedInput.addEventListener("input", (e) => {
 
 sizeInput.addEventListener("input", (e) => {
   size = e.target.value;
-  c.font = `${size}px Jolly Lodger`;
+  c.font = `${size}px ${font}`;
+});
+
+const gifs = [
+  "/photo/bg-blinking-star.gif",
+  "/photo/disco.gif",
+  "/photo/heart.gif",
+  "/photo/tea.jpg",
+  "/photo/merry-chrismas.gif",
+  "/photo/free-happy-birthday.gif",
+  "/photo/firework.gif",
+];
+
+gifs.forEach((gif) => {
+  const img = document.createElement("img");
+  img.src = gif;
+  img.addEventListener("click", () => {
+    backgroundInput = gif;
+    canvas.style.background = `url(${backgroundInput})`;
+    canvas.style.backgroundSize = "cover";
+    canvas.style.backgroundRepeat = "no-repeat";
+    canvas.style.backgroundAttachment = "fixed";
+    canvas.style.backgroundPosition = "center top";
+  });
+  bgContent.appendChild(img);
+});
+
+bgButton.addEventListener("click", function () {
+  bgContent.classList.toggle("active");
 });
 
 animeSelect.addEventListener("change", (e) => {
@@ -45,6 +103,21 @@ animeSelect.addEventListener("change", (e) => {
     rightToLeft(text);
   }
 });
+
+const coll = document.getElementsByClassName("collapsible");
+let i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.display === "flex") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "flex";
+    }
+  });
+}
 
 const inputForm = document.getElementById("input-form");
 
@@ -59,11 +132,16 @@ inputForm.addEventListener("submit", (e) => {
   fullCanvas.width = window.innerWidth;
   fullCanvas.height = window.innerHeight;
 
-  fullC.fillStyle = "#ffffff";
-  fullC.font = `${parseInt(size) * 5}px Jolly Lodger`;
+  fullC.fillStyle = `${color}`;
+  fullC.lineWidth = 5;
+  fullC.strokeStyle = `${stroke}`;
+  fullC.font = `${parseInt(size) * 5}px ${font}`;
 
-  fullCanvas.style.background = "url('/photo/default-background.png')";
+  fullCanvas.style.background = `url(${backgroundInput})`;
   fullCanvas.style.backgroundSize = "cover";
+  fullCanvas.style.backgroundRepeat = "no-repeat";
+  fullCanvas.style.backgroundAttachment = "fixed";
+  fullCanvas.style.backgroundPosition = "center top";
 
   if (window.innerWidth < 600) {
     if (selectedOption === "left") {
@@ -86,6 +164,7 @@ function leftToRight(text) {
   c.clearRect(0, 0, canvas.width, canvas.height);
 
   c.fillText(text, xLeft, 100);
+  c.strokeText(text, xLeft, 100);
 
   xLeft += speed;
 
@@ -100,6 +179,7 @@ function rightToLeft(text) {
   c.clearRect(0, 0, canvas.width, canvas.height);
 
   c.fillText(text, xRight, 100);
+  c.strokeText(text, xRight, 100);
 
   xRight -= speed;
 
@@ -114,10 +194,11 @@ function leftToRightFull(text) {
   fullC.clearRect(0, 0, fullCanvas.width, fullCanvas.height);
 
   fullC.fillText(text, fullXLeft, 600);
+  fullC.strokeText(text, fullXLeft, 600);
 
   fullXLeft += speed * 2;
 
-  if (fullXLeft > 1900) {
+  if (fullXLeft > 2100) {
     fullXLeft = -400;
   }
 }
@@ -128,10 +209,11 @@ function rightToLeftFull(text) {
   fullC.clearRect(0, 0, fullCanvas.width, fullCanvas.height);
 
   fullC.fillText(text, fullXRight, 600);
+  fullC.strokeText(text, fullXRight, 600);
 
   fullXRight -= speed * 2;
 
-  if (fullXRight < -600) {
+  if (fullXRight < -1000) {
     fullXRight = 2000;
   }
 }
@@ -145,6 +227,7 @@ function leftToRightFullMobile(text) {
   fullC.translate(300, fullYTop);
   fullC.rotate(-Math.PI / 2);
   fullC.fillText(text, -20, 0);
+  fullC.strokeText(text, -20, 0);
   fullC.restore();
 
   fullYTop += speed * 2;
@@ -163,11 +246,12 @@ function rightToLeftFullMobile(text) {
   fullC.translate(300, fullYBottom);
   fullC.rotate(-Math.PI / 2);
   fullC.fillText(text, -20, 0);
+  fullC.strokeText(text, -20, 0);
   fullC.restore();
 
   fullYBottom -= speed * 2;
 
-  if (fullYBottom < -200) {
+  if (fullYBottom < -400) {
     fullYBottom = fullCanvas.height + 300;
   }
 }
