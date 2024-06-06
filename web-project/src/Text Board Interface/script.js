@@ -34,6 +34,7 @@ let font = "";
 // color input
 const colorInput = document.getElementById("color-input");
 let color = "";
+
 // stroke input
 const strokeInput = document.getElementById("stroke-color-input");
 let stroke = "";
@@ -45,7 +46,7 @@ colorInput.addEventListener("change", (e) => {
 
 strokeInput.addEventListener("change", (e) => {
   stroke = e.target.value;
-  c.lineWidth = 5;
+  c.lineWidth = 3;
   c.strokeStyle = stroke;
 });
 
@@ -133,7 +134,7 @@ inputForm.addEventListener("submit", (e) => {
   fullCanvas.height = window.innerHeight;
 
   fullC.fillStyle = `${color}`;
-  fullC.lineWidth = 5;
+  fullC.lineWidth = 3;
   fullC.strokeStyle = `${stroke}`;
   fullC.font = `${parseInt(size) * 5}px ${font}`;
 
